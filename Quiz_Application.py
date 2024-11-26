@@ -16,7 +16,7 @@ if user == 'making':
         A = str(input("Input the answer to your question \n"))
         Quiz[Q] = A
     # Saves the dictionary to a pickle file for later use.
-    with open("QuizApplication.pkl", "ab") as fp:
+    with open("QuizApplication.pkl", "wb") as fp:
         pickle.dump(Quiz, fp)
         fp.flush()
     print("Saving the following quiz data:", Quiz)
@@ -32,7 +32,5 @@ if user == 'taking':
                 print('Correct')
             else:
                 print(f'Incorrect, the correct answer is {solution}')
-        print(Quiz)
     except FileNotFoundError:
         print('No quiz found, please create a quiz first.')
-        
